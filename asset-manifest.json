@@ -1,13 +1,24 @@
 {
   "files": {
-    "main.css": "/goit-react-hw-08-phonebook/static/css/main.7acaea2f.css",
-    "main.js": "/goit-react-hw-08-phonebook/static/js/main.191fb3ba.js",
+    "main.css": "/goit-react-hw-08-phonebook/static/css/main.23b9450e.css",
+    "main.js": "/goit-react-hw-08-phonebook/static/js/main.c68b7d92.js",
+    "static/js/544.d0d052c3.chunk.js": "/goit-react-hw-08-phonebook/static/js/544.d0d052c3.chunk.js",
+    "static/js/88.b6287fb6.chunk.js": "/goit-react-hw-08-phonebook/static/js/88.b6287fb6.chunk.js",
+    "static/js/53.fab86fcf.chunk.js": "/goit-react-hw-08-phonebook/static/js/53.fab86fcf.chunk.js",
+    "static/js/643.7b7c16da.chunk.js": "/goit-react-hw-08-phonebook/static/js/643.7b7c16da.chunk.js",
+    "static/js/427.cc4dc917.chunk.js": "/goit-react-hw-08-phonebook/static/js/427.cc4dc917.chunk.js",
+    "static/media/1642991819_1-phonoteka-org-p-fon-dlya-prezentatsii-kniga-raskritaya-1.png": "/goit-react-hw-08-phonebook/static/media/1642991819_1-phonoteka-org-p-fon-dlya-prezentatsii-kniga-raskritaya-1.395c4a00b1ba409bc30b.png",
     "index.html": "/goit-react-hw-08-phonebook/index.html",
-    "main.7acaea2f.css.map": "/goit-react-hw-08-phonebook/static/css/main.7acaea2f.css.map",
-    "main.191fb3ba.js.map": "/goit-react-hw-08-phonebook/static/js/main.191fb3ba.js.map"
+    "main.23b9450e.css.map": "/goit-react-hw-08-phonebook/static/css/main.23b9450e.css.map",
+    "main.c68b7d92.js.map": "/goit-react-hw-08-phonebook/static/js/main.c68b7d92.js.map",
+    "544.d0d052c3.chunk.js.map": "/goit-react-hw-08-phonebook/static/js/544.d0d052c3.chunk.js.map",
+    "88.b6287fb6.chunk.js.map": "/goit-react-hw-08-phonebook/static/js/88.b6287fb6.chunk.js.map",
+    "53.fab86fcf.chunk.js.map": "/goit-react-hw-08-phonebook/static/js/53.fab86fcf.chunk.js.map",
+    "643.7b7c16da.chunk.js.map": "/goit-react-hw-08-phonebook/static/js/643.7b7c16da.chunk.js.map",
+    "427.cc4dc917.chunk.js.map": "/goit-react-hw-08-phonebook/static/js/427.cc4dc917.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.7acaea2f.css",
-    "static/js/main.191fb3ba.js"
+    "static/css/main.23b9450e.css",
+    "static/js/main.c68b7d92.js"
   ]
 }
