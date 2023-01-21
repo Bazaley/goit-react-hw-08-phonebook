@@ -1,40 +1,71 @@
-import { useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { selectContacts } from 'redux/selectors';
-import { Section } from './Section/Section';
-import { Contacts } from './Contacts/Contacts';
-import { Filter } from './Filter/Filter';
-import { Notification } from './Notification/Notification';
-import Form from './Form/Form';
-import { fetchContacts } from 'redux/contacts/operations';
+import { lazy, useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { fetchCurrentUser } from 'redux/auth/auth-operations';
+import { Routes, Route } from 'react-router-dom';
+import Layout from './Layout/Layout';
+import PrivateRoute from 'HOCs/PrivateRoute';
+import PublicRoute from 'HOCs/PublicRoute';
+import { selectIsFetchingCurrentUser, selectToken } from 'redux/selectors';
+import { useSelector } from 'react-redux';
+import { fetchContacts } from 'redux/contacts/contacts-operations';
 
-import RegisterForm from './RegisterForm/RegisterForm';
+const Home = lazy(() => import('pages/Home/Home'));
+const AddContacts = lazy(() => import('pages/AddContacts/AddContacts'));
+const Contacts = lazy(() => import('pages/Contacts/Contacts'));
+const Register = lazy(() => import('pages/Register/Register'));
+const Login = lazy(() => import('pages/Login/Login'));
 
 const App = () => {
   const dispatch = useDispatch();
-
-  const contacts = useSelector(selectContacts);
+  const isFetchingCurrentUser = useSelector(selectIsFetchingCurrentUser);
+  const token = useSelector(selectToken);
 
   useEffect(() => {
-    dispatch(fetchContacts());
-  }, [dispatch]);
+    dispatch(fetchCurrentUser());
+    if (token) dispatch(fetchContacts());
+  }, [dispatch, token]);
 
   return (
     <>
-      <RegisterForm />
-      <Section title="Phonebook">
-        <Form />
-      </Section>
-      <Section title="Contacts">
-        {contacts.length ? (
-          <>
-            <Filter />
-            <Contacts />
-          </>
-        ) : (
-          <Notification message="There are no entries in the phone book" />
-        )}
-      </Section>
+      {!isFetchingCurrentUser && (
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            <Route index element={<Home />} />
+            <Route
+              path="addContact"
+              element={
+                <PrivateRoute>
+                  <AddContacts />
+                </PrivateRoute>
+              }
+            />
+            <Route
+              path="contacts"
+              element={
+                <PrivateRoute>
+                  <Contacts />
+                </PrivateRoute>
+              }
+            />
+            <Route
+              path="register"
+              element={
+                <PublicRoute restricted>
+                  <Register />
+                </PublicRoute>
+              }
+            />
+            <Route
+              path="login"
+              element={
+                <PublicRoute restricted>
+                  <Login />
+                </PublicRoute>
+              }
+            />
+          </Route>
+        </Routes>
+      )}
     </>
   );
 };

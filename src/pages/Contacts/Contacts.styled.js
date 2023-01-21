@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import image from '../../images/1642991819_1-phonoteka-org-p-fon-dlya-prezentatsii-kniga-raskritaya-1.png';
 
 export const Table = styled.table`
   min-width: 600px;
@@ -20,4 +21,10 @@ export const Th = styled.th`
   &:not(:last-child) {
     border-right: 1px solid white;
   }
+`;
+
+export const Box = styled.div`
+  height: 100vh;
+  background-image: url(${image});
+  background-size: cover;
 `;

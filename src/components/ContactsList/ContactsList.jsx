@@ -4,7 +4,7 @@ import {
   selectContacts,
   selectRenameContact,
 } from 'redux/selectors';
-import { deleteContact } from 'redux/contacts/operations';
+import { deleteContact } from 'redux/contacts/contacts-operations';
 
 import { Tr, Td, Button } from './ContactsList.styled';
 import UpdateContact from '../UpdateContact/UpdateContact';

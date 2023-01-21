@@ -1,6 +1,6 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { selectRenameContact } from 'redux/selectors';
-import { updateContact } from 'redux/contacts/operations';
+import { updateContact } from 'redux/contacts/contacts-operations';
 import { useState } from 'react';
 
 const UpdateContact = () => {
