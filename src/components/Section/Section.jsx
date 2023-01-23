@@ -1,11 +1,11 @@
 import PropTypes from 'prop-types';
 
-import { SectionTag } from './Section.styled';
+import { SectionTag, TitleStyled } from './Section.styled';
 
 export const Section = ({ title, children }) => {
   return (
     <SectionTag>
-      {title && title === 'Phonebook' ? <h1>{title}</h1> : <h2>{title}</h2>}
+      {title && <TitleStyled>{title}</TitleStyled>}
 
       {children}
     </SectionTag>

@@ -1,7 +1,8 @@
 import styled from 'styled-components';
 
-const FormTag = styled.form`
+export const FormTag = styled.form`
   width: 400px;
+  height: 250px;
   margin: 0 auto;
   padding: 30px 20px 20px;
   border-radius: 4px;
@@ -10,7 +11,7 @@ const FormTag = styled.form`
   opacity: 0.9;
 `;
 
-const Input = styled.input`
+export const Input = styled.input`
   display: block;
   width: 400px;
   height: 23px;
@@ -27,24 +28,9 @@ const Input = styled.input`
   }
 `;
 
-const Label = styled.label`
+export const Label = styled.label`
   display: block;
 
   margin-bottom: 45px;
+  font-size: 22px;
 `;
-
-const Button = styled.button`
-  display: block;
-  width: 199px;
-  margin: 0 auto;
-  padding: 7px;
-  border-radius: 4px;
-  border: none;
-  background-color: #5c5cec;
-  color: white;
-  font-size: 17px;
-  font-family: Acme;
-  cursor: pointer;
-`;
-
-export { FormTag, Input, Label, Button };

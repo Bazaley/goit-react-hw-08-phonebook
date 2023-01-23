@@ -6,9 +6,14 @@ import {
 } from 'redux/selectors';
 import { deleteContact } from 'redux/contacts/contacts-operations';
 
-import { Tr, Td, Button } from './ContactsList.styled';
 import UpdateContact from '../UpdateContact/UpdateContact';
 import { renameContact } from 'redux/contacts/contactsSlice';
+import {
+  Button,
+  Item,
+  ImCrossStyled,
+  GrUpdateStyled,
+} from './ContactsList.styled';
 
 export const ContactsList = () => {
   const contacts = useSelector(selectContacts);
@@ -18,30 +23,27 @@ export const ContactsList = () => {
   const dispatch = useDispatch();
 
   return (
-    <tbody>
+    <>
       {contacts
         .filter(({ name }) => name.toLowerCase().includes(filter.toLowerCase()))
         .map(({ id, name, number }) => {
           return (
-            <Tr key={id}>
-              <Td>{contact?.name === name ? <UpdateContact /> : name}</Td>
-              <Td>{number}</Td>
-              <Td>
-                <Button
-                  rename
-                  onClick={() => dispatch(renameContact({ id, name, number }))}
-                >
-                  rename
-                </Button>
-              </Td>
-              <Td>
-                <Button onClick={() => dispatch(deleteContact(id))}>
-                  delete
-                </Button>
-              </Td>
-            </Tr>
+            <Item key={id}>
+              <p>{contact?.name === name ? <UpdateContact /> : name}</p>
+              <p>{number}</p>
+
+              <Button
+                rename
+                onClick={() => dispatch(renameContact({ id, name, number }))}
+              >
+                <GrUpdateStyled size={'20px'} />
+              </Button>
+              <Button onClick={() => dispatch(deleteContact(id))}>
+                <ImCrossStyled size={'20px'} />
+              </Button>
+            </Item>
           );
         })}
-    </tbody>
+    </>
   );
 };

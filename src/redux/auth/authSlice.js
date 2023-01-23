@@ -48,6 +48,7 @@ const authSlice = createSlice({
         state.isLoading = false;
       })
       .addCase(fetchCurrentUser.pending, state => {
+        // state.token = null;
         state.isLoading = true;
         state.isFetchingCurrentUser = true;
       })

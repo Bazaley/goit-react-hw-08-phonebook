@@ -9,11 +9,25 @@ export const Item = styled.li`
   &:not(:last-child) {
     margin-right: 30px;
   }
+  &:first-child {
+    margin-right: 300px;
+  }
 `;
 
 export const NavLinkStyled = styled(NavLink)`
+  font-size: 18px;
+  font-weight: 600;
+  color: black;
   &.active {
-    color: blue;
-    text-decoration: underline 2px;
+    text-shadow: 2px 1px white;
+  }
+
+  &.active::after {
+    display: block;
+    content: '';
+    background-color: white;
+    width: 100%;
+    height: 2px;
+    border-radius: 4px;
   }
 `;

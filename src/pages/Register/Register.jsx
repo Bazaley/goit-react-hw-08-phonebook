@@ -1,6 +1,9 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { register } from 'redux/auth/auth-operations';
+import { Section } from 'components/Section/Section';
+import Particle from 'components/Particle/Particle';
+import { FormTag, Input, Label, Button } from './Register.styled';
 
 const Register = () => {
   const [name, setName] = useState('');
@@ -34,31 +37,39 @@ const Register = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <label>
-        Name:
-        <input type="text" value={name} name="name" onChange={handleChange} />
-      </label>
-      <label>
-        Email:
-        <input
-          type="email"
-          value={email}
-          name="email"
-          onChange={handleChange}
-        />
-      </label>
-      <label>
-        Password:
-        <input
-          type="password"
-          value={password}
-          name="password"
-          onChange={handleChange}
-        />
-      </label>
-      <button>Submit</button>
-    </form>
+    <Section title="Register and get access to personal data">
+      <FormTag onSubmit={handleSubmit}>
+        <Label>
+          <Input
+            type="text"
+            value={name}
+            name="name"
+            onChange={handleChange}
+            placeholder="Your Name"
+          />
+        </Label>
+        <Label>
+          <Input
+            type="email"
+            value={email}
+            name="email"
+            onChange={handleChange}
+            placeholder="Email"
+          />
+        </Label>
+        <Label>
+          <Input
+            type="password"
+            value={password}
+            name="password"
+            onChange={handleChange}
+            placeholder="Password"
+          />
+        </Label>
+        <Button>Register</Button>
+      </FormTag>
+      <Particle />
+    </Section>
   );
 };
 

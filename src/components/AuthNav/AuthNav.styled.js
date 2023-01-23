@@ -13,8 +13,18 @@ export const Item = styled.li`
 `;
 
 export const NavLinkStyled = styled(NavLink)`
+  font-size: 18px;
+  font-weight: 600;
   &.active {
-    color: blue;
-    text-decoration: underline 2px;
+    text-shadow: 2px 1px white;
+  }
+
+  &.active::after {
+    display: block;
+    content: '';
+    background-color: white;
+    width: 100%;
+    height: 2px;
+    border-radius: 4px;
   }
 `;

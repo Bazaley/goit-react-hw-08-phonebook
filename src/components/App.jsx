@@ -7,7 +7,6 @@ import PrivateRoute from 'HOCs/PrivateRoute';
 import PublicRoute from 'HOCs/PublicRoute';
 import { selectIsFetchingCurrentUser, selectToken } from 'redux/selectors';
 import { useSelector } from 'react-redux';
-import { fetchContacts } from 'redux/contacts/contacts-operations';
 
 const Home = lazy(() => import('pages/Home/Home'));
 const AddContacts = lazy(() => import('pages/AddContacts/AddContacts'));
@@ -22,7 +21,6 @@ const App = () => {
 
   useEffect(() => {
     dispatch(fetchCurrentUser());
-    if (token) dispatch(fetchContacts());
   }, [dispatch, token]);
 
   return (

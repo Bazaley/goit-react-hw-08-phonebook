@@ -1,10 +1,21 @@
-@import-normalize; /* bring in normalize.css styles */
+@import-normalize;
+
+@font-face {
+  font-family: 'Acme';
+  font-style: normal;
+  font-weight: 400;
+  src: url('./fonts/acme-v21-latin-regular.eot');
+  src: local(''),
+    url('./fonts/acme-v21-latin-regular.eot?#iefix') format('embedded-opentype'),
+    url('./fonts/acme-v21-latin-regular.woff2') format('woff2'),
+    url('./fonts/acme-v21-latin-regular.woff') format('woff'),
+    url('./fonts/acme-v21-latin-regular.ttf') format('truetype'),
+    url('./fonts/acme-v21-latin-regular.svg#Acme') format('svg');
+}
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: Acme, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
