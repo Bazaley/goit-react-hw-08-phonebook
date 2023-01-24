@@ -36,10 +36,13 @@ const Label = styled.label`
 `;
 
 const Button = styled.button`
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 199px;
+  height: 35px;
   margin: 0 auto;
-  padding: 7px;
+
   border-radius: 4px;
   border: none;
   background-color: #5c5cec;

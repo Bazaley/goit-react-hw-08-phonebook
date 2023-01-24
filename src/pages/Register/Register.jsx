@@ -1,14 +1,20 @@
 import { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { register } from 'redux/auth/auth-operations';
 import { Section } from 'components/Section/Section';
 import Particle from 'components/Particle/Particle';
+import { selectAuthIsLoading, selectAuthError } from 'redux/selectors';
+
+import CircularProgress from '@mui/material/CircularProgress';
 import { FormTag, Input, Label, Button } from './Register.styled';
 
 const Register = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+
+  const isLoading = useSelector(selectAuthIsLoading);
+  const error = useSelector(selectAuthError);
 
   const dispatch = useDispatch();
   const handleChange = ({ target: { name, value } }) => {
@@ -48,6 +54,7 @@ const Register = () => {
               onChange={handleChange}
               placeholder="Your Name"
               autoComplete="off"
+              required
             />
           </Label>
           <Label>
@@ -58,6 +65,7 @@ const Register = () => {
               onChange={handleChange}
               placeholder="Email"
               autoComplete="off"
+              required
             />
           </Label>
           <Label>
@@ -68,9 +76,18 @@ const Register = () => {
               onChange={handleChange}
               placeholder="Password"
               autoComplete="off"
+              required
             />
           </Label>
-          <Button>Register</Button>
+          <Button disabled={isLoading}>
+            {error === 'Bad Request' ? (
+              'Sorry, this user already exists, please try another name'
+            ) : isLoading ? (
+              <CircularProgress size={19} style={{ color: 'white' }} />
+            ) : (
+              'Sign up'
+            )}
+          </Button>
         </FormTag>
         <Particle />
       </>

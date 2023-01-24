@@ -6,6 +6,8 @@ import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import { FormTag, Input, Label, Button } from './AddContacts.styled';
 import { Navigate } from 'react-router-dom';
 import { Section } from 'components/Section/Section';
+import { selectIsLoading } from 'redux/selectors';
+import CircularProgress from '@mui/material/CircularProgress';
 
 import Particle from 'components/Particle/Particle';
 
@@ -16,7 +18,7 @@ const Form = () => {
 
   const dispatch = useDispatch();
   const contacts = useSelector(selectContacts);
-
+  const isLoading = useSelector(selectIsLoading);
   const handleSubmit = e => {
     e.preventDefault();
     setIsSubmit(true);
@@ -68,7 +70,13 @@ const Form = () => {
               />
             </Label>
 
-            <Button type="sumbit">Add contact</Button>
+            <Button type="sumbit">
+              {isLoading ? (
+                <CircularProgress size={19} style={{ color: 'white' }} />
+              ) : (
+                ' Add contact'
+              )}
+            </Button>
           </FormTag>
         </Section>
       )}

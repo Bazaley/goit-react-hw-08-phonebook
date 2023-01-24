@@ -13,18 +13,22 @@ export const Paragraph = styled.p`
 `;
 
 export const Button = styled.button`
+  display: block;
   margin-left: 20px;
-  background-color: #4a6c5d;
+  background-color: transparent;
   font-size: 15px;
   font-weight: 600;
-  border: none;
+  border: 1px solid black;
   color: white;
   border-radius: 4px;
-  padding: 7px;
+
   cursor: pointer;
-  transition: background-color 250ms linear;
+
+  transition: color 250ms linear;
+  min-width: 70px;
+  min-height: 33px;
 
   &:hover {
-    background-color: #60aa89;
+    color: black;
   }
 `;

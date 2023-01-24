@@ -25,12 +25,15 @@ const contactsSlice = createSlice({
     builder
       .addCase(fetchContacts.fulfilled, (state, { payload }) => {
         state.contacts = payload;
+        state.isLoading = false;
       })
       .addCase(addContact.fulfilled, (state, { payload }) => {
         state.contacts.push(payload);
+        state.isLoading = false;
       })
       .addCase(deleteContact.fulfilled, (state, { payload }) => {
         state.contacts = state.contacts.filter(({ id }) => id !== payload);
+        state.isLoading = false;
       })
       .addCase(updateContact.fulfilled, (state, { payload }) => {
         const contactIndex = state.contacts.findIndex(
@@ -38,6 +41,7 @@ const contactsSlice = createSlice({
         );
         state.contacts[contactIndex] = payload;
         state.contactUpdate = null;
+        state.isLoading = false;
       })
       .addMatcher(
         isAnyOf(

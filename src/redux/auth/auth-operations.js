@@ -21,7 +21,7 @@ export const register = createAsyncThunk(
       token.set(data.token);
       return data;
     } catch (error) {
-      return rejectWithValue();
+      return rejectWithValue('Bad Request');
     }
   }
 );

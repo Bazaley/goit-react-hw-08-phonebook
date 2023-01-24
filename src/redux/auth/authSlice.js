@@ -60,9 +60,10 @@ const authSlice = createSlice({
         state.isFetchingCurrentUser = false;
       })
       .addMatcher(
-        isAnyOf(register.pending, login.pending, logout.pending, state => {
+        isAnyOf(register.pending, login.pending, logout.pending),
+        state => {
           state.isLoading = true;
-        })
+        }
       );
   },
 });
