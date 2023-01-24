@@ -25,28 +25,32 @@ const Login = () => {
       title="
     Enter your details and get access to your personal contact book"
     >
-      <FormTag onSubmit={handleSubmit}>
-        <Label>
-          <Input
-            type="email"
-            value={email}
-            name="email"
-            onChange={e => setEmail(e.target.value)}
-            placeholder="Email"
-          />
-        </Label>
-        <Label>
-          <Input
-            type="password"
-            value={password}
-            name="password"
-            onChange={e => setPassword(e.target.value)}
-            placeholder="Password"
-          />
-        </Label>
-        <Button>Login</Button>
-      </FormTag>
-      <Particle />
+      <>
+        <FormTag onSubmit={handleSubmit}>
+          <Label>
+            <Input
+              type="email"
+              value={email}
+              name="email"
+              onChange={e => setEmail(e.target.value)}
+              placeholder="Email"
+              autoComplete="off"
+            />
+          </Label>
+          <Label>
+            <Input
+              type="password"
+              value={password}
+              name="password"
+              onChange={e => setPassword(e.target.value)}
+              placeholder="Password"
+              autoComplete="off"
+            />
+          </Label>
+          <Button>Login</Button>
+        </FormTag>
+        <Particle />
+      </>
     </Section>
   );
 };

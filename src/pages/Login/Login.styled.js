@@ -19,6 +19,8 @@ const Input = styled.input`
   text-align: center;
   outline: none;
   background-color: transparent;
+  font-family: Acme;
+  font-size: 22px;
 
   &::placeholder {
     font-family: Acme;

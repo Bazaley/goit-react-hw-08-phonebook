@@ -17,7 +17,6 @@ const authSlice = createSlice({
       .addCase(register.fulfilled, (state, { payload: { token, user } }) => {
         state.user = user;
         state.token = token;
-
         state.isLoading = false;
         state.error = null;
       })
@@ -28,7 +27,6 @@ const authSlice = createSlice({
       .addCase(login.fulfilled, (state, { payload }) => {
         state.user = payload.user;
         state.token = payload.token;
-
         state.isLoading = false;
         state.error = null;
       })
@@ -39,7 +37,6 @@ const authSlice = createSlice({
       .addCase(logout.fulfilled, state => {
         state.user = { name: '', emeil: '' };
         state.token = null;
-
         state.isLoading = false;
         state.error = null;
       })
@@ -48,7 +45,6 @@ const authSlice = createSlice({
         state.isLoading = false;
       })
       .addCase(fetchCurrentUser.pending, state => {
-        // state.token = null;
         state.isLoading = true;
         state.isFetchingCurrentUser = true;
       })
@@ -68,18 +64,6 @@ const authSlice = createSlice({
           state.isLoading = true;
         })
       );
-    // .addMatcher(
-    //   isAnyOf(
-    //     register.fulfilled,
-    //     login.fulfilled,
-    //     logout.fulfilled,
-    //     fetchCurrentUser.fulfilled,
-    //     state => {
-    //       state.isLoading = false;
-    //       state.error = null;
-    //     }
-    //   )
-    // );
   },
 });
 

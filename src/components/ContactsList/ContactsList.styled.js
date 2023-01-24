@@ -6,6 +6,7 @@ export const Item = styled.li`
   width: calc((100% - 60px) / 3);
   display: flex;
   justify-content: space-around;
+  align-items: center;
   margin-bottom: 30px;
   padding: 20px 0;
   border: 2px solid gray;
@@ -19,11 +20,18 @@ export const Item = styled.li`
   }
 `;
 
+export const Paragraph = styled.p`
+  font-size: 18px;
+`;
+
 export const Button = styled.button`
   background-color: transparent;
 
   border: none;
   cursor: pointer;
+  &:not(:last-child) {
+    margin-right: 10px;
+  }
 `;
 
 export const ImCrossStyled = styled(ImCross)`
@@ -36,11 +44,10 @@ export const ImCrossStyled = styled(ImCross)`
 `;
 
 export const GrUpdateStyled = styled(RxUpdate)`
-  fill: white;
-  color: white;
+  color: black;
   transition: color 250ms linear;
 
   &:hover {
-    color: greenyellow;
+    color: white;
   }
 `;

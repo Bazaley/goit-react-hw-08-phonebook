@@ -5,7 +5,7 @@ import {
   selectRenameContact,
 } from 'redux/selectors';
 import { deleteContact } from 'redux/contacts/contacts-operations';
-
+import { Avatar } from '@mui/material';
 import UpdateContact from '../UpdateContact/UpdateContact';
 import { renameContact } from 'redux/contacts/contactsSlice';
 import {
@@ -13,6 +13,7 @@ import {
   Item,
   ImCrossStyled,
   GrUpdateStyled,
+  Paragraph,
 } from './ContactsList.styled';
 
 export const ContactsList = () => {
@@ -29,18 +30,28 @@ export const ContactsList = () => {
         .map(({ id, name, number }) => {
           return (
             <Item key={id}>
-              <p>{contact?.name === name ? <UpdateContact /> : name}</p>
-              <p>{number}</p>
-
-              <Button
-                rename
-                onClick={() => dispatch(renameContact({ id, name, number }))}
+              <Avatar
+                sx={{
+                  bgcolor: '#2e6ee7',
+                }}
               >
-                <GrUpdateStyled size={'20px'} />
-              </Button>
-              <Button onClick={() => dispatch(deleteContact(id))}>
-                <ImCrossStyled size={'20px'} />
-              </Button>
+                {name[0].toUpperCase()}
+              </Avatar>
+              <Paragraph>
+                {contact?.name === name ? <UpdateContact /> : name}
+              </Paragraph>
+              <Paragraph>({number})</Paragraph>
+              <div>
+                <Button
+                  rename
+                  onClick={() => dispatch(renameContact({ id, name, number }))}
+                >
+                  <GrUpdateStyled size={'20px'} />
+                </Button>
+                <Button onClick={() => dispatch(deleteContact(id))}>
+                  <ImCrossStyled size={'20px'} />
+                </Button>
+              </div>
             </Item>
           );
         })}

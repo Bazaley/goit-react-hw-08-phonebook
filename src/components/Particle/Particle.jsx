@@ -12,17 +12,10 @@ const Particle = () => {
       id="tsparticles"
       init={particlesInit}
       options={{
-        background: {
-          opacity: 0.5,
-          color: {
-            value: '#4281f7',
-          },
-        },
-
         fullScreen: {
           zIndex: -1,
         },
-        fpsLimit: 50,
+        fpsLimit: 1000,
         interactivity: {
           events: {
             onClick: {
@@ -40,18 +33,19 @@ const Particle = () => {
               quantity: 4,
             },
             repulse: {
-              distance: 50,
+              distance: 100,
               duration: 0.4,
             },
           },
         },
+
         particles: {
           color: {
             value: '#0c4752',
           },
           links: {
             color: '#08353b',
-            distance: 100,
+            distance: 150,
             enable: true,
             opacity: 0.5,
             width: 3,
@@ -65,19 +59,19 @@ const Particle = () => {
             outModes: {
               default: 'bounce',
             },
-            random: false,
+            random: true,
             speed: 2,
-            straight: false,
+            straight: true,
           },
           number: {
             density: {
               enable: true,
               area: 700,
             },
-            value: 70,
+            value: 50,
           },
           opacity: {
-            value: 0.7,
+            value: 0.5,
           },
           shape: {
             type: 'circle',
