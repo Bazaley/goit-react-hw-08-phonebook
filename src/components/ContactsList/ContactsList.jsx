@@ -1,13 +1,6 @@
 import { useSelector, useDispatch } from 'react-redux';
-import {
-  selectFilterContact,
-  selectContacts,
-  selectRenameContact,
-} from 'redux/selectors';
+import { selectFilterContact, selectContacts } from 'redux/selectors';
 import { deleteContact } from 'redux/contacts/contacts-operations';
-import { Avatar } from '@mui/material';
-import UpdateContact from '../UpdateContact/UpdateContact';
-import { renameContact } from 'redux/contacts/contactsSlice';
 import {
   Button,
   Item,
@@ -16,10 +9,11 @@ import {
   Paragraph,
 } from './ContactsList.styled';
 
-export const ContactsList = () => {
+import { Avatar } from '@mui/material';
+
+export const ContactsList = ({ setContact }) => {
   const contacts = useSelector(selectContacts);
   const filter = useSelector(selectFilterContact);
-  const contact = useSelector(selectRenameContact);
 
   const dispatch = useDispatch();
 
@@ -37,14 +31,14 @@ export const ContactsList = () => {
               >
                 {name[0].toUpperCase()}
               </Avatar>
-              <Paragraph>
-                {contact?.name === name ? <UpdateContact /> : name}
-              </Paragraph>
-              <Paragraph>({number})</Paragraph>
+              <Paragraph>{name}</Paragraph>
+              <Paragraph>{number}</Paragraph>
               <div>
                 <Button
                   rename
-                  onClick={() => dispatch(renameContact({ id, name, number }))}
+                  onClick={() => {
+                    setContact({ id, name, number });
+                  }}
                 >
                   <GrUpdateStyled size={'20px'} />
                 </Button>
