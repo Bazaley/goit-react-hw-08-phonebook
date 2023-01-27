@@ -12,7 +12,7 @@ const Login = () => {
   return (
     <>
       <Snackbar
-        open={Boolean(error)}
+        open={error === 400}
         TransitionComponent={props => <Slide {...props} direction="up" />}
         message="Hello"
         anchorOrigin={{ vertical: 'top', horizontal: 'center' }}
