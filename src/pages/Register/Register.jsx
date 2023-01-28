@@ -11,8 +11,8 @@ const Register = () => {
   return (
     <>
       <Snackbar
-        open={Boolean(error)}
-        TransitionComponent={props => <Slide {...props} direction="up" />}
+        open={error === 'Bad Request'}
+        TransitionComponent={props => <Slide {...props} direction="down" />}
         message="Hello"
         anchorOrigin={{ vertical: 'top', horizontal: 'center' }}
         sx={{ marginTop: '20px' }}

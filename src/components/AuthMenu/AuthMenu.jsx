@@ -14,7 +14,7 @@ const AuthMenu = () => {
   return (
     <Box>
       <Paragraph>{`Welcome,  ${user?.name}`}</Paragraph>
-      <Avatar sx={{ bgcolor: '#82acfb' }}>{user?.name[0]}</Avatar>
+      <Avatar sx={{ bgcolor: '#48d1cc' }}>{user?.name[0]}</Avatar>
       <Button onClick={() => dispatch(logout())}>
         {isLoading ? (
           <CircularProgress size={19} style={{ color: 'white' }} />

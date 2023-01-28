@@ -26,7 +26,7 @@ export const ContactsList = ({ setContact }) => {
             <Item key={id}>
               <Avatar
                 sx={{
-                  bgcolor: '#2e6ee7',
+                  bgcolor: '#48d1cc',
                 }}
               >
                 {name[0].toUpperCase()}

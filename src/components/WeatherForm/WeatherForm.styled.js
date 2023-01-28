@@ -4,7 +4,15 @@ export const Box = styled.div`
   width: 400px;
   min-height: 250px;
   padding: 30px 20px 20px;
-  background-color: #82acfb;
+
+  background: linear-gradient(
+    130deg,
+    #008080,
+    #20b2aa,
+    #00ffff,
+    #48d1cc,
+    #00ced1
+  );
   opacity: 0.9;
   box-shadow: 5px 5px 16px #756a6a;
   border-radius: 4px;

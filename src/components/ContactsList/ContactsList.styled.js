@@ -12,7 +12,14 @@ export const Item = styled.li`
   border: 2px solid gray;
   border-radius: 4px;
   box-sizing: border-box;
-  background-color: #82acfb;
+  background: linear-gradient(
+    130deg,
+    #008080 50%,
+    #20b2aa,
+    #00ffff,
+    #48d1cc,
+    #00ced1
+  );
   opacity: 0.9;
 
   &:not(:nth-child(3n)) {

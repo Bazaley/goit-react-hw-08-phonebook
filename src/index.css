@@ -20,7 +20,15 @@ body {
   -moz-osx-font-smoothing: grayscale;
 
   height: 100vh;
-  background: linear-gradient(130deg, #2e6ee7, #82acfb);
+
+  background: linear-gradient(
+    130deg,
+    #008080,
+    #20b2aa,
+    #00ffff,
+    #48d1cc,
+    #00ced1
+  );
 }
 
 code {

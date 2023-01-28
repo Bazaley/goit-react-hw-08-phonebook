@@ -6,7 +6,14 @@ const FormTag = styled.form`
   padding: 30px 20px 20px;
   border-radius: 4px;
   box-shadow: 5px 5px 16px #756a6a;
-  background-color: #82acfb;
+  background: linear-gradient(
+    130deg,
+    #008080,
+    #20b2aa,
+    #00ffff,
+    #48d1cc,
+    #00ced1
+  );
   opacity: 0.9;
 `;
 
@@ -41,7 +48,7 @@ const Button = styled.button`
   padding: 7px;
   border-radius: 4px;
   border: none;
-  background-color: #5c5cec;
+  background-color: #008080;
   color: white;
   font-size: 17px;
   font-family: Acme;
